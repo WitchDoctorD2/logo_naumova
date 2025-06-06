@@ -9,6 +9,7 @@
 }
 
 body {
+    overflow-x: hidden;
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     color: var(--text-dark);
