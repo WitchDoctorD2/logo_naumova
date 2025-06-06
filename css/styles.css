@@ -173,7 +173,7 @@ body {
     background: var(--green-main);
     color: white;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 15px;
 }
 
 .answer {
