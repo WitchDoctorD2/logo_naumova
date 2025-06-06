@@ -242,6 +242,17 @@ body {
     .teacher img {
         max-width: 100px;
     }
+    .carousel-btn {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .left-btn,
+    .right-btn {
+        display: none;
+    }
 }
 
 /* Footer */
