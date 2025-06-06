@@ -212,7 +212,7 @@ body {
     width: 250px;
     padding: 20px;
     border-radius: 10px;
-    background: var(--green-light);
+    background: linear-gradient(green, rgb(26, 239, 26));
     text-align: center;
     transform-style: preserve-3d;
     transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease;
