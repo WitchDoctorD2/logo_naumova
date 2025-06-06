@@ -68,7 +68,7 @@ body {
 
 /* Hero */
 .hero {
-    background: url('hero.jpg') center/cover no-repeat;
+    background: linear-gradient(135deg, green, rgb(46, 255, 46));
     color: var(--text-light);
     text-align: center;
     padding: 100px 20px;
@@ -186,18 +186,23 @@ body {
 
 /* Teachers */
 .teachers {
-    padding: 60px 20px;
+    position: relative;
+    padding: 60px 20px 180px;
+    /* нижний паддинг увеличен! */
     background-color: var(--green-main);
+
 }
+
 
 .teacher-carousel {
     position: relative;
     width: 100%;
     max-width: 1100px;
     height: 320px;
-    margin: 0 auto;
     overflow: visible;
     perspective: 1000px;
+    margin-bottom: 150px;
+    margin-right: 250px;
 }
 
 .teacher {
@@ -218,8 +223,8 @@ body {
 .teacher img {
     width: 100%;
     max-width: 150px;
-    border-radius: 50%;
     margin-bottom: 10px;
+    border-radius: 15px;
 }
 
 /* Мобильная адаптация */
@@ -301,6 +306,7 @@ body {
         flex-direction: row;
         justify-content: space-between;
     }
+
     .nav {
         margin-top: 10px;
     }
