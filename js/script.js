@@ -98,7 +98,7 @@ if (btnLeft && btnRight) {
   });
 }
 
-// Добавляем свайп на мобильных
+// Добавляем свайп на мобильных с блокировкой горизонтального скролла страницы
 const carousel = document.querySelector('.teacher-carousel');
 if (carousel) {
   let startX = 0;
@@ -114,6 +114,10 @@ if (carousel) {
     const currentX = e.touches[0].clientX;
     const diffX = currentX - startX;
 
+    if (Math.abs(diffX) > 10) {
+      e.preventDefault(); // Блокируем скролл страницы при горизонтальном свайпе
+    }
+
     if (Math.abs(diffX) > 50) {
       if (diffX > 0) {
         btnLeft?.click();
@@ -122,7 +126,7 @@ if (carousel) {
       }
       isDragging = false;
     }
-  });
+  }, { passive: false }); // обязательно passive: false для preventDefault
 
   carousel.addEventListener('touchend', () => {
     isDragging = false;
