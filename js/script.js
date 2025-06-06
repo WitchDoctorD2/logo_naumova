@@ -63,20 +63,16 @@ function updateCarousel() {
     teacher.style.filter = 'brightness(0.6)';
 
     if (index === currentIndex) {
-      // центральная карточка (главная)
       teacher.style.transform = `translateX(0) scale(1) perspective(600px) rotateY(0deg)`;
       teacher.style.opacity = '1';
       teacher.style.pointerEvents = 'auto';
       teacher.style.zIndex = '10';
       teacher.style.filter = 'brightness(1)';
     } else if (index === (currentIndex - 1 + total) % total) {
-      // левая карточка (уменьшенная, затемненная)
       teacher.style.transform = `translateX(${-offsetX}px) scale(0.7) perspective(600px) rotateY(30deg)`;
     } else if (index === (currentIndex + 1) % total) {
-      // правая карточка (уменьшенная, затемненная)
       teacher.style.transform = `translateX(${offsetX}px) scale(0.7) perspective(600px) rotateY(-30deg)`;
     } else {
-      // все остальные карточки убираем в сторону и прозрачные
       teacher.style.transform = `translateX(${offsetX * 3}px) scale(0.5)`;
       teacher.style.opacity = '0';
       teacher.style.pointerEvents = 'none';
@@ -86,7 +82,7 @@ function updateCarousel() {
   });
 }
 
-// Кнопки переключения, предполагается, что в HTML есть кнопки с классами left-btn и right-btn
+// Кнопки переключения
 const btnLeft = document.querySelector('.left-btn');
 const btnRight = document.querySelector('.right-btn');
 
@@ -102,7 +98,38 @@ if (btnLeft && btnRight) {
   });
 }
 
-// Обновляем карусель при изменении размера окна для адаптивности
+// Добавляем свайп на мобильных
+const carousel = document.querySelector('.teacher-carousel');
+if (carousel) {
+  let startX = 0;
+  let isDragging = false;
+
+  carousel.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+  });
+
+  carousel.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    const currentX = e.touches[0].clientX;
+    const diffX = currentX - startX;
+
+    if (Math.abs(diffX) > 50) {
+      if (diffX > 0) {
+        btnLeft?.click();
+      } else {
+        btnRight?.click();
+      }
+      isDragging = false;
+    }
+  });
+
+  carousel.addEventListener('touchend', () => {
+    isDragging = false;
+  });
+}
+
+// Обновляем карусель при изменении размера окна
 window.addEventListener('resize', updateCarousel);
 
 // Инициализация
