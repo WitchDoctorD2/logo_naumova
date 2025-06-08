@@ -1,6 +1,11 @@
 /* Основные стили */
-:root {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
+}
+
+:root {
     --green-light: #d0f0c0;
     --green-main: #5cb85c;
     --green-dark: #3d8b3d;
@@ -208,7 +213,7 @@ body {
     overflow: visible;
     perspective: 1000px;
     margin-bottom: 150px;
-    margin-right: 250px;
+    margin-right: 190px;
 }
 
 .teacher {
