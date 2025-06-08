@@ -1,5 +1,6 @@
 /* Основные стили */
 :root {
+    box-sizing: border-box;
     --green-light: #d0f0c0;
     --green-main: #5cb85c;
     --green-dark: #3d8b3d;
@@ -18,8 +19,8 @@ body {
 }
 
 .ania-phpto {
-    height: 1200px;
-    width: 1000;
+    max-width: 100%;
+    height: auto;
 }
 .container {
     max-width: 1100px;
@@ -383,7 +384,7 @@ body {
 
 @media (max-width: 768px) {
     .hero-container {
-        padding-left: 20px;
+        padding-left: 20px !important;
         flex-direction: column;
         justify-content: center;
         align-items: center;
