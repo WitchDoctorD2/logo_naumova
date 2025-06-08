@@ -406,3 +406,19 @@ body {
         padding-left: 0;
     }
 }
+.google-form-wrapper {
+    max-width: 700px;
+    /* Ограничиваем ширину формы */
+    margin: 0 auto;
+    /* Центрируем форму по горизонтали */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    /* Немного тени для акцента */
+    border-radius: 10px;
+    overflow: hidden;
+    /* Чтобы скругления работали */
+}
+
+.google-form-wrapper iframe {
+    border: none;
+    border-radius: 10px;
+    min-height: 700px; }
