@@ -410,10 +410,10 @@ body {
 .hero-image {
     height: auto;
     width: 600px;
-    /* Можно увеличить/уменьшить */
     margin-top: -50px;
-    /* Налегание на нижнюю секцию */
     display: block;
+
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
 }
 
 .hero-container {
