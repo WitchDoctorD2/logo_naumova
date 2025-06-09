@@ -12,6 +12,8 @@
     --text-dark: #222;
     --text-light: #fff;
     --bg-light: #f9f9f9;
+    overflow-x: hidden;
+      
 }
 
 body {
