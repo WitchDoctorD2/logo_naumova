@@ -391,10 +391,11 @@ body {
     }
 }
 .hero {
+    height: 95vh;
     background: linear-gradient(135deg, green, rgb(46, 255, 46));
     color: var(--text-light);
     padding: 100px 0 150px;
-    margin-top: 80px;
+    margin-top: 70px;
     position: relative;
     overflow: visible;
 }
@@ -451,6 +452,7 @@ body {
     .hero-image {
         width: 400px;
         margin-top: -70px;
+        filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
     }
 
     .hero-content {
