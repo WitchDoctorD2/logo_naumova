@@ -1,4 +1,4 @@
-/* Основные стили */
+/* ========== Global Styles ========== */
 *,
 *::before,
 *::after {
@@ -12,30 +12,29 @@
     --text-dark: #222;
     --text-light: #fff;
     --bg-light: #f9f9f9;
-    overflow-x: hidden;
-      
 }
 
 body {
-    overflow-x: hidden;
     margin: 0;
+    overflow-x: hidden;
     font-family: 'Segoe UI', sans-serif;
     color: var(--text-dark);
     background-color: var(--bg-light);
     line-height: 1.6;
 }
 
-.ania-phpto {
-    max-width: 100%;
-    height: auto;
-}
 .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Header */
+.ania-phpto {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ========== Header ========== */
 .header {
     background: var(--green-main);
     color: var(--text-light);
@@ -45,6 +44,12 @@ body {
     width: 100%;
     z-index: 1000;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.header.scrolled {
+    background: rgba(164, 217, 186, 0.85);
+    backdrop-filter: blur(4px);
 }
 
 .header .header-container {
@@ -79,18 +84,66 @@ body {
     color: var(--green-light);
 }
 
-/* Hero */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.burger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.nav-active {
+    display: flex !important;
+}
+
+/* ========== Hero Section ========== */
 .hero {
     background: linear-gradient(135deg, green, rgb(46, 255, 46));
     color: var(--text-light);
-    text-align: center;
-    padding: 100px 20px;
-    margin-top: 80px;
-    /* для компенсации фиксированного хедера */
+    padding: 100px 0 150px;
+    margin-top: 70px;
+    position: relative;
+    overflow: visible;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding-left: 500px;
+}
+
+.hero-content {
+    flex: 1 1 60%;
+    text-align: left;
+    padding-left: 20px;
 }
 
 .hero-content h1 {
     font-size: 2.5rem;
+}
+
+.hero-image-wrapper {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.hero-image {
+    width: 600px;
+    margin-top: -50px;
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
 }
 
 .btn {
@@ -108,7 +161,7 @@ body {
     background: #2e6f2e;
 }
 
-/* Services */
+/* ========== Services ========== */
 .services {
     padding: 60px 20px;
     background: white;
@@ -137,35 +190,7 @@ body {
     color: var(--green-dark);
 }
 
-/* Testimonials */
-.testimonials {
-    padding: 60px 20px;
-}
-
-.testimonial-grid {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.testimonial-grid img {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 10px;
-}
-
-/* Why Us */
-.why-us {
-    padding: 60px 20px;
-    background: #fff;
-}
-
-.why-us ul {
-    list-style: disc;
-    padding-left: 20px;
-}
-
-/* FAQ */
+/* ========== FAQ ========== */
 .faq {
     padding: 60px 20px;
     background: var(--green-light);
@@ -182,11 +207,9 @@ body {
     color: white;
     padding: 10px 15px;
     border-radius: 15px;
-    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
 }
 
 .answer {
@@ -197,40 +220,27 @@ body {
     border-radius: 0 0 15px 15px;
 }
 
-
 .icon {
     font-weight: bold;
     font-size: 20px;
     transition: transform 0.3s ease;
 }
 
-
-
-/* Contact */
-.contact {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-/* Teachers */
+/* ========== Teachers ========== */
 .teachers {
     position: relative;
     padding: 60px 20px 180px;
-    /* нижний паддинг увеличен! */
     background-color: var(--green-main);
-
 }
-
 
 .teacher-carousel {
     position: relative;
     width: 100%;
     max-width: 1100px;
     height: 320px;
-    overflow: visible;
-    perspective: 1000px;
     margin-bottom: 150px;
     margin-right: 190px;
+    perspective: 1000px;
 }
 
 .teacher {
@@ -243,9 +253,9 @@ body {
     background: linear-gradient(green, rgb(26, 239, 26));
     text-align: center;
     transform-style: preserve-3d;
-    transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease;
     transform-origin: center center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease;
 }
 
 .teacher img {
@@ -255,45 +265,37 @@ body {
     border-radius: 15px;
 }
 
-/* Мобильная адаптация */
-@media (max-width: 768px) {
-    .teacher-carousel {
-        height: 260px;
-        max-width: 100%;
-    }
-
-    .teacher {
-        width: 180px;
-        padding: 15px;
-    }
-
-    .teacher img {
-        max-width: 100px;
-    }
-    .carousel-btn {
-        display: none;
-    }
-}
-
-@media (max-width: 768px) {
-
-    .left-btn,
-    .right-btn {
-        display: none;
-    }
-}
-
-/* Footer */
-.footer {
-    background-color: var(--green-dark);
-    padding: 30px 15px;
-    font-family: Arial, sans-serif;
+/* ========== Contact ========== */
+.contact {
+    padding: 60px 20px;
     text-align: center;
 }
 
-.container {
-    max-width: 800px;
+/* ========== Google Form Wrapper ========== */
+.google-form-wrapper {
+    max-width: 700px;
     margin: 0 auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.google-form-wrapper iframe {
+    border: none;
+    border-radius: 10px;
+    min-height: 700px;
+}
+
+/* ========== Footer ========== */
+.footer {
+    background-color: var(--green-dark);
+    padding: 30px 15px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.footer .container {
+    max-width: 800px;
 }
 
 .footer-logo {
@@ -306,8 +308,8 @@ body {
 .footer-info {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
     flex-wrap: wrap;
+    margin-bottom: 20px;
 }
 
 .footer-info .left,
@@ -341,67 +343,7 @@ body {
     transform: scale(1.2);
 }
 
-/* Для адаптива */
-@media (max-width: 600px) {
-    .footer-info {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer-info .left,
-    .footer-info .right {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 10px;
-    }
-}
-.burger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-}
-
-.burger span {
-    width: 25px;
-    height: 3px;
-    background: white;
-    display: block;
-    transition: all 0.3s ease;
-}
-
-.nav-active {
-    display: flex !important;
-}
-
-.question {
-    font-weight: bold;
-    background: var(--green-main);
-    color: white;
-    padding: 10px 15px;
-    border-radius: 15px;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-}
-
-.icon {
-    font-weight: bold;
-    font-size: 20px;
-    transition: transform 0.3s ease;
-}
-
-.answer {
-    display: none;
-    background: white;
-    padding: 10px;
-    border-left: 4px solid var(--green-main);
-    border-radius: 0 0 15px 15px;
-}
-
-
+/* ========== Media Queries ========== */
 @media (max-width: 768px) {
     .burger {
         display: flex;
@@ -416,7 +358,6 @@ body {
         width: 100%;
         display: none;
         padding: 1rem;
-        animation: slideDown 0.3s ease forwards;
         justify-content: center;
         align-items: center;
     }
@@ -430,8 +371,64 @@ body {
         justify-content: space-between;
     }
 
-    .nav {
-        margin-top: 10px;
+    .hero {
+        padding: 60px 0 80px;
+    }
+
+    .hero-container {
+        padding-left: 20px !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 250px;
+    }
+
+    .hero-image-wrapper {
+        position: static;
+        width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .hero-image {
+        width: 400px;
+        margin-top: -70px;
+    }
+
+    .hero-content {
+        padding-left: 0;
+    }
+
+    .teacher-carousel {
+        height: 260px;
+        max-width: 100%;
+    }
+
+    .teacher {
+        width: 180px;
+        padding: 15px;
+    }
+
+    .teacher img {
+        max-width: 100px;
+    }
+
+    .left-btn,
+    .right-btn {
+        display: none;
+    }
+
+    .footer-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-info .left,
+    .footer-info .right {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
     }
 }
 
@@ -446,98 +443,3 @@ body {
         transform: translateY(0);
     }
 }
-.hero {
-    background: linear-gradient(135deg, green, rgb(46, 255, 46));
-    color: var(--text-light);
-    padding: 100px 0 150px;
-    margin-top: 70px;
-    position: relative;
-    overflow: visible;
-}
-
-.hero-image-wrapper {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: auto;
-    z-index: 1;
-}
-
-.hero-image {
-    height: auto;
-    width: 600px;
-    margin-top: -50px;
-    display: block;
-
-    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
-}
-
-.hero-container {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    padding-left: 500px;
-    /* сдвиг вправо — немного больше, чем ширина картинки */
-}
-.hero-content {
-    flex: 1 1 60%;
-    text-align: left;
-    padding-left: 20px;
-}
-
-@media (max-width: 768px) {
-
-    .hero {
-            padding: 60px 0 80px;
-        }
-    
-    .hero-image {
-            width: 280px;
-            margin-top: -50px;
-        }
-
-    .hero-container {
-        height: 230px;
-        padding-left: 20px !important;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-
-    .hero-image-wrapper {
-        position: static;
-        width: 100%;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .hero-image {
-        width: 400px;
-        margin-top: -70px;
-        filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
-    }
-
-    .hero-content {
-        padding-left: 0;
-    }
-}
-.google-form-wrapper {
-    max-width: 700px;
-    /* Ограничиваем ширину формы */
-    margin: 0 auto;
-    /* Центрируем форму по горизонтали */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    /* Немного тени для акцента */
-    border-radius: 10px;
-    overflow: hidden;
-    /* Чтобы скругления работали */
-}
-
-.google-form-wrapper iframe {
-    border: none;
-    border-radius: 10px;
-    min-height: 700px; }
