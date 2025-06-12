@@ -490,7 +490,17 @@ body {
 
 @media (max-width: 768px) {
 
+    .hero {
+            padding: 60px 0 80px;
+        }
+    
+    .hero-image {
+            width: 280px;
+            margin-top: -50px;
+        }
+
     .hero-container {
+        height: 230px;
         padding-left: 20px !important;
         flex-direction: column;
         justify-content: center;
