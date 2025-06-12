@@ -137,6 +137,7 @@ html, body {
 }
 
 .hero-image {
+    display: block;
     width: 600px;
     margin-top: -50px;
     filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
@@ -160,7 +161,7 @@ html, body {
 /* ========== Services ========== */
 .services {
     padding: 60px 20px;
-    background: white;
+    background: linear-gradient(180deg, green, rgb(56, 252, 56));
 }
 
 .service-list {
@@ -265,6 +266,9 @@ html, body {
 .contact {
     padding: 60px 20px;
     text-align: center;
+    background-image: url("/images/bg-gg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* ========== Google Form Wrapper ========== */
@@ -274,6 +278,7 @@ html, body {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
+    
 }
 
 .google-form-wrapper iframe {
