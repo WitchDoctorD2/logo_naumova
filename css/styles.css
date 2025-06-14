@@ -16,11 +16,30 @@
 
 html, body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
     color: var(--text-dark);
     background-color: var(--bg-light);
     line-height: 1.6;
     overflow-x: hidden !important;
+}
+
+h1, h2, h3 {
+    font-family: "Oswald", sans-serif;
+    text-align: center;
+    
+    
+}
+p, li, a {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+button {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
 }
 
 .container {
@@ -100,6 +119,7 @@ html, body {
 }
 
 /* ========== Hero Section ========== */
+
 .hero {
     background: linear-gradient(135deg, green, rgb(46, 255, 46));
     color: var(--text-light);
