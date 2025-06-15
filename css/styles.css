@@ -207,6 +207,74 @@ button {
     color: var(--green-dark);
 }
 
+/* ========== Why Us Animation ========== */
+.why-us {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    padding: 60px 20px;
+    background-color: #eaffea;
+}
+
+.why-us.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.why-us h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--green-dark);
+}
+
+.why-us ul {
+    list-style: none;
+    padding-left: 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.why-us li {
+    background: white;
+    margin-bottom: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    font-weight: 500;
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Плавная задержка для каждого элемента */
+.why-us.animate li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.why-us.animate li:nth-child(1) {
+    transition-delay: 0.2s;
+}
+
+.why-us.animate li:nth-child(2) {
+    transition-delay: 0.4s;
+}
+
+.why-us.animate li:nth-child(3) {
+    transition-delay: 0.6s;
+}
+
+.why-us.animate li:nth-child(4) {
+    transition-delay: 0.8s;
+}
+
+.why-us.animate li:nth-child(5) {
+    transition-delay: 1s;
+}
+
+.why-us.animate li:nth-child(6) {
+    transition-delay: 1.2s;
+}
 /* ========== FAQ ========== */
 .faq {
     padding: 60px 20px;
@@ -421,6 +489,15 @@ button {
         padding-left: 0;
     }
 
+    .why-us h2 {
+        font-size: 1.6rem;
+    }
+    
+    .why-us li {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
     .teacher-carousel {
         height: 260px;
         max-width: 100%;
@@ -464,3 +541,7 @@ button {
         transform: translateY(0);
     }
 }
+
+
+
+

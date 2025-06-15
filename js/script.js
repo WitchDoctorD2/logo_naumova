@@ -147,3 +147,19 @@ window.addEventListener('scroll', function () {
     header.classList.remove('scrolled');
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const section = document.querySelector(".why-us");
+  const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              section.classList.add("animate");
+              observer.unobserve(section); // Отключаем, чтобы не повторялось
+          }
+      });
+  }, { threshold: 0.3 });
+
+  if (section) {
+      observer.observe(section);
+  }
+});
