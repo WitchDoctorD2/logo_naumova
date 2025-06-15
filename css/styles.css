@@ -75,14 +75,8 @@ button {
 }
 
 .logo {
-    width: 70px;
-    height: 70px;
-    background-image: url('images/logo-header.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    text-indent: -9999px;
-    /* спрятать текст */
+    width: 80px;
+    height: 80px;
 }
 
 .nav {
@@ -466,7 +460,7 @@ button {
     }
 
     .hero {
-        padding: 85px 0 80px;
+        padding: 60px 0 80px;
     }
 
     .hero-container {
