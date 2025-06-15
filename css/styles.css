@@ -286,7 +286,7 @@ button {
 .contact {
     padding: 60px 20px;
     text-align: center;
-    background-image: url("/images/bg-gg.jpg");
+    background-image: url("images/bg-gg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
