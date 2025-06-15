@@ -77,7 +77,7 @@ button {
 .logo {
     width: 70px;
     height: 70px;
-    background-image: url('/images/logo-header.svg');
+    background-image: url('images/logo-header.svg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
