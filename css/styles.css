@@ -75,9 +75,14 @@ button {
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: rgb(0, 255, 72);
+    width: 70px;
+    height: 70px;
+    background-image: url('/images/logo-header.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -9999px;
+    /* спрятать текст */
 }
 
 .nav {
@@ -461,7 +466,7 @@ button {
     }
 
     .hero {
-        padding: 60px 0 80px;
+        padding: 85px 0 80px;
     }
 
     .hero-container {
