@@ -479,7 +479,9 @@ button {
     .logo-wrapper {
         margin-bottom: 10px;   
     }
-
+    .logo-2 {
+        margin-left: -35px;
+    }
     .nav {
         position: absolute;
         top: 100%;
