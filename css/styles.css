@@ -25,7 +25,7 @@ html, body {
 h1, h2, h3 {
     font-family: "Oswald", sans-serif;
     text-align: center;
-    
+    line-height: 1;
     
 }
 p, li, a {
@@ -153,7 +153,7 @@ button {
 
 .hero {
     height: 100vh;
-    background: linear-gradient(135deg, green, rgb(46, 255, 46));
+    background: linear-gradient(0deg, green, rgb(46, 255, 46));
     color: var(--text-light);
     padding: 200px 0 150px;
     margin-top: 70px;
@@ -215,7 +215,7 @@ button {
 /* ========== Services ========== */
 .services {
     padding: 60px 20px;
-    background: linear-gradient(180deg, green, rgb(56, 252, 56));
+    background: linear-gradient(180deg, green, rgb(54, 222, 54));
 }
 
 .service-list {
@@ -236,9 +236,64 @@ button {
     margin-top: 0;
 }
 
-.price {
+/* ========== PRICE ========== */
+.pricing {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px;
+    background: linear-gradient(rgb(54, 222, 54), #a7eca7);
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px 24px;
+    width: 300px;
+    box-sizing: border-box;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin: 0 0 10px;
+    color: #2e6f2e;
+    font-size: 1.2rem;
+}
+
+.card .price {
+    font-size: 1.4rem;
+    color: #4CAF50;
     font-weight: bold;
-    color: var(--green-dark);
+    margin-bottom: 10px;
+}
+
+.card ul {
+    padding-left: 20px;
+    margin: 10px 0 0;
+}
+
+.card ul li {
+    margin-bottom: 5px;
+}
+
+.card span {
+    color: #888;
+    font-size: 0.9em;
+}
+
+.note {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+    font-style: italic;
+    color: #444;
 }
 
 /* ========== Why Us Animation ========== */
@@ -247,7 +302,7 @@ button {
     transform: translateY(50px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     padding: 60px 20px;
-    background-color: #eaffea;
+    background: linear-gradient(#a7eca7, #F5D28B) ;
 }
 
 .why-us.animate {
@@ -312,7 +367,7 @@ button {
 /* ========== FAQ ========== */
 .faq {
     padding: 60px 20px;
-    background: var(--green-light);
+    background:#F5D28B;
 }
 
 .faq-item {
@@ -388,9 +443,8 @@ button {
 .contact {
     padding: 60px 20px;
     text-align: center;
-    background-image: url("images/bg-gg.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: linear-gradient(#F5D28B,#5cb85c);
+    
 }
 
 /* ========== Google Form Wrapper ========== */
@@ -516,7 +570,7 @@ button {
         text-align: center;
         height: 250px;
     }
-
+    
     .hero-image-wrapper {
         position: static;
         width: 100%;
